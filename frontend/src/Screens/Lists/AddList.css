@@ -1,0 +1,14 @@
+.my-modal-header,
+.my-modal-body,
+.my-modal-footer {
+    background-color: #181a1b !important;
+    color: white;
+}
+
+.btn-close {
+    color: #820000 !important;
+}
+
+.my-modal-header .btn-close {
+    filter: brightness(0) invert(1);
+}

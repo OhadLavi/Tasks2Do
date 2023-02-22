@@ -1,0 +1,69 @@
+h1 {
+    display: block;
+    margin-block-start: 0 !important;
+    margin-block-end: 0 !important;
+    margin-inline-start: 0 !important;
+    margin-inline-end: 0 !important;
+}
+
+.btnPlus {
+    background-color: #107ea2 !important;
+    border-color: #0995c2 !important;
+}
+
+.btnPlus:hover {
+    background-color: #0995c2 !important;
+    border-color: white !important;
+    border-left: 1px solid white;
+}
+
+.form-check-input[type=checkbox]:not(:checked) {
+    background-color: white !important;
+    border-color: transparent !important;
+}
+
+.form-check-input[type=checkbox]:checked {
+    background-color: #107ea2 !important;
+    border-color: transparent !important;
+}
+
+.no-border {
+    border: none !important;
+}
+
+.taskCompleted {
+    text-decoration: line-through;
+    text-decoration-color: #820000;
+    text-decoration-thickness: 2px;
+}
+
+.btnTrash {
+    color: #820000 !important;
+    fill: #820000 !important;
+}
+
+.btnTrash:hover {
+    color: #a32e2e !important;
+}
+
+.tt {
+    color: #687179;
+}
+
+.min-width {
+    min-width: '100px'
+}
+
+.list-box {
+    height: 15px;
+    width: 15px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 20%;
+}
+
+.inputAdd:focus,
+.inputAdd:active {
+    outline: none !important;
+    box-shadow: none !important;
+}

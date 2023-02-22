@@ -1,0 +1,43 @@
+.text-white {
+    color: #d1cdc7 !important;
+}
+
+.btn-primary {
+    background-color: #173156;
+    border-color: #173156 !important;
+}
+
+.btn-primary:hover {
+    background-color: #1f4882;
+}
+
+.btnColor {
+    background-color: #212529 !important;
+}
+
+.whiteBorder {
+    border-color: #363a3c !important;
+}
+
+.blackBorder {
+    border-color: #000 !important;
+}
+
+.h-700 {
+    height: 700px;
+}
+
+.cssBox {
+    margin: 0 15px;
+    flex-basis: calc(50% - 30px);
+}
+
+.form-control {
+    border: 1px solid #3a3e41;
+}
+
+.btn,
+.btn:hover {
+    border: 1px solid #3a3e41;
+    border-left: none;
+}

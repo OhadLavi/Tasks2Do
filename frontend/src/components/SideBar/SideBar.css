@@ -1,0 +1,11 @@
+.logo {
+    padding: 9px;
+    text-transform: capitalize;
+    font-weight: bolder;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+.display {
+    display: none;
+}

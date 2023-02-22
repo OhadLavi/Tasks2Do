@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+html,
+body,
+.App,
+#root {
+  background-color: #1b1d1e;
+  height: 100%;
+  color: #c9c6c0;
+}
+
+.text-color {
+  color: #d1cdc7 !important
+}
+
+.login-register-main {
+  background-color: #1b1d1e;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.alert-helper {
+  position: relative;
+  display: flex;
+  right: 0;
+  width: 100%;
+}
+
+.spinner {
+  border: 8px solid #85ddb1; /* Light grey */
+  border-top: 8px solid #fff; /* Blue */
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 5s linear infinite;
+  display: flex;
+  position: absolute;
+  right: 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
