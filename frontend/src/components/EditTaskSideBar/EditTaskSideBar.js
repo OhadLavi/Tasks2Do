@@ -31,7 +31,6 @@ const Layout = ({ onClose, task, handleSidebarClose, taskUpdated }) => {
           },
         })
         .then((res) => {
-          console.log(res.data);
           setAvailableTasksLists(res.data);
         });
     } catch (error) {
