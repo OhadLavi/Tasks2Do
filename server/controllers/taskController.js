@@ -105,7 +105,6 @@ export const updateTask = async (req, res) => {
         const user = req.user;
         const taskId = req.params.id;
         const updatedTask = req.body;
-        console.log("here:" + updatedTask)
         const task = await tasks.findOneAndUpdate(
             { _id: taskId, user: user._id },
             { ...updatedTask },
