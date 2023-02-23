@@ -130,7 +130,7 @@ const AddTaskPage = () => {
                 <Form.Group controlId="formTaskLists" className="my-3">
                     <Form.Label>Lists</Form.Label>
                     <Form.Select
-                        style={{ height: availableTasksLists.length > 5 ? '144px' : availableTasksLists.length > 0 ? `${19 + availableTasksLists.length * 24}px` : `29px` }}
+                        style={{ height: availableTasksLists.length > 5 ? '144px' : availableTasksLists.length > 0 ? `${19 + availableTasksLists.length * 24}px` : `50px` }}
                         multiple
                         size={availableTasksLists.length > 5 ? 5 : availableTasksLists.length}
                         onChange={(event) => { setTaskLists(Array.from(event.target.selectedOptions, option => option.value)); }}
