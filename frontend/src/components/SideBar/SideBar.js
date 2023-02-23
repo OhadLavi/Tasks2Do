@@ -45,9 +45,6 @@ const SidebarPage = () => {
   };
 
   const getTaskListsMenuItems = () => {
-    if (!availableTasksLists) {
-      return {[]};
-    }
     return availableTasksLists.map((list) => {
       return {
         name: list.listName,
