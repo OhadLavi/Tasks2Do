@@ -22,9 +22,13 @@ app.use('/api/users', userRoutes);
 app.use('/api/tasks', taskRoutes);
 app.use('/api/lists', listRoutes);
 
+// Set the __dirname variable to the absolute path of the current directory
 const __dirname = path.resolve();
+
+// Serve static files from the frontend/build directory
 app.use(express.static(path.join(__dirname, '/frontend/build')));
 
+// Handle all other routes by sending the index.html file
 app.get('*', (req, res) =>
   res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
 );
