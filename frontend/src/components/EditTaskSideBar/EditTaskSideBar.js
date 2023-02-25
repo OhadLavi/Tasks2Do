@@ -16,8 +16,12 @@ const Layout = ({ onClose, task, handleSidebarClose, taskUpdated }) => {
     if (task) {
       setTaskName(task.taskName);
       setTaskDescription(task.description);
-      setTaskDueDate(task.dueDate);
-      setTaskLists(task.lists);
+      setTaskDueDate(task ? new Date(task.dueDate).toLocaleDateString('en-GB', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+      }) : '');
+      setTaskLists(task.lists.map(list => list.listId));
     }
   }, [task]);
 
@@ -49,16 +53,6 @@ const Layout = ({ onClose, task, handleSidebarClose, taskUpdated }) => {
 
   const updateTask = async (event) => {
     event.preventDefault();
-    // Check if the taskLists array contains an empty string
-    const emptyStringIndex = taskLists.indexOf('');
-    let hasEmptyString = false;
-    if (emptyStringIndex !== -1) {
-      if (taskLists.length > 1) {
-        taskLists.splice(emptyStringIndex, 1);
-      } else {
-        hasEmptyString = true;
-      }
-    }
     try {
       const response = await axios.put(
         `/api/tasks/updateTask/${task._id}`,
@@ -67,10 +61,14 @@ const Layout = ({ onClose, task, handleSidebarClose, taskUpdated }) => {
           description: taskDescription
             ? taskDescription
             : task
-            ? task.description
-            : '',
-          dueDate: taskDueDate ? taskDueDate : task ? task.taskDueDate : '',
-          lists: hasEmptyString ? [] : taskLists,
+              ? task.description
+              : '',
+          dueDate: taskDueDate
+            ? new Date(taskDueDate.split('/').reverse().join('-')).toISOString()
+            : task
+              ? new Date(task.taskDueDate.split('/').reverse().join('-')).toISOString()
+              : '',
+          lists: taskLists.length === 0 ? [] : taskLists,
           isCompleted: false,
         },
         {
@@ -145,25 +143,15 @@ const Layout = ({ onClose, task, handleSidebarClose, taskUpdated }) => {
           />
         </Form.Group>
 
-        <Form.Group controlId='formTaskDueDate' className='my-3'>
-          <Form.Label>Due date</Form.Label>
-          <Form.Control
-            type='date'
-            placeholder='dd-mm-yyyy'
-            value={
-              taskDueDate
-                ? taskDueDate
-                : task
-                ? new Date(task.dueDate).toLocaleDateString('sv-SE')
-                : ''
-            }
-            min={new Date().toISOString().slice(0, 10)}
-            onChange={(event) => {
-              setTaskDueDate(event.target.value);
-            }}
-            className='bg-dark text-white text-start'
-          />
-        </Form.Group>
+        <Form.Control
+          type='date'
+          value={taskDueDate ? taskDueDate.split('/').reverse().join('-') : ''}
+          min={new Date().toISOString().slice(0, 10)}
+          onChange={(event) => {
+            setTaskDueDate(event.target.value);
+          }}
+          className='bg-dark text-white text-start'
+        />
 
         <Form.Group controlId='formTaskLists' className='my-3'>
           <Form.Label>Lists</Form.Label>
@@ -173,8 +161,8 @@ const Layout = ({ onClose, task, handleSidebarClose, taskUpdated }) => {
                 availableTasksLists.length > 5
                   ? '144px'
                   : availableTasksLists.length > 0
-                  ? `${19 + availableTasksLists.length * 24}px`
-                  : `29px`,
+                    ? `${19 + availableTasksLists.length * 24}px`
+                    : `50px`,
             }}
             multiple
             size={
