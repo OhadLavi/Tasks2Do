@@ -5,9 +5,9 @@
 ![Task2Do](https://raw.githubusercontent.com/OhadLavi/Tasks2Do/main/task2do.png)
 
 ## Description
-Task2Do is a user-friendly todo list website built using React for the frontend and Node.js with Express for the backend.
+Task2Do is a user-friendly todo list website designed to help you efficiently manage your tasks and stay organized. 
 
-It is designed to help you efficiently manage your tasks and stay organized. The website allows users to create, edit, delete, and categorize tasks using different lists. 
+The website allows users to create, edit, delete, and categorize tasks using different lists. 
 
 ## Features
 - Add new tasks with a title, description, and due date to keep track of your to-dos.
