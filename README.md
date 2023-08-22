@@ -25,7 +25,7 @@ It is designed to help you efficiently manage your tasks and stay organized. The
 
 ### Backend
 - Node.js
-- Express
+- Express.js
 - MongoDB
 
 ## Getting Started
