@@ -2,6 +2,8 @@
 
 **Website Link:** [https://tasks2do.onrender.com/](https://tasks2do.onrender.com/)
 
+![Task2Do](https://raw.githubusercontent.com/OhadLavi/Tasks2Do/main/task2do.png)
+
 ## Description
 Task2Do is a user-friendly todo list website built using React for the frontend and Node.js with Express for the backend.
 
@@ -59,6 +61,6 @@ http://localhost:3000
 ```
 7. To log in and access the features, use the following credentials:
 ```
-- Username: 1@1.com
-- Password: 1
+Username: 1@1.com
+Password: 1
 ```
